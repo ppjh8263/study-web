@@ -2,11 +2,23 @@
 <head>
     <title>WEB - STUDY JS</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css", id="mystylesheet">
 </head>
 
-<body>
+<body class="white">
     <h1><a href="index.html">WEB</a></h1>
+    <div id="btn">
+        <div>
+            <input type="button" value="black" onclick="
+            document.querySelector('body').className = 'black';
+            ">
+        </div>
+        <div>
+            <input type="button" value="white" onclick="
+            document.querySelector('body').className = 'white';
+            ">
+        </div>
+    </div>
     <div id="grid">
         <ol>
             <li><a href="html.html">HTML</a></li>
