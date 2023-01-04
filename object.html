@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var cowokers ={
+            "programmers" : "hayden",
+            "desinger" : "none" 
+        };
+        document.write('programmers : ' + cowokers.programmers + '<br>')
+        document.write('desinger : ' + cowokers.desinger + '<br>')
+        cowokers.leader = 'new_leader';
+        document.write('leader : ' + cowokers.leader + '<br>')
+        cowokers['data engineer'] = 'new_de';
+        document.write('data engineer : ' + cowokers['data engineer'] + '<br>')
+    </script>
+    <h2>Iteration</h2>
+    <script>
+        for(k in cowokers){
+            document.write(k +' : ' + cowokers[k] + '<br>')
+        }
+    </script>
+    <h2>Function</h2>
+    <script>
+        cowokers.showAll = function(){
+            for(k in this){
+                if(k==='showAll'){
+                    continue;
+                };
+                document.write(k + ' : ' + this[k] + '<br>');
+            }
+        }
+        cowokers.showAll();
+    </script>
+</body>
+</html>

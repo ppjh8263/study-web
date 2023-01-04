@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script>
-        var fn_change_theme = function(){
-            var target = document.querySelector('body');
-            if(target.className=== 'white'){
-                target.className = 'black';
+        var Theme = {
+            set_all_value:function(cls_name,color){
                 document.querySelectorAll(
-                    '.theme_chagne').forEach(btn => btn.value = 'white'
-                    );
-            } else if(target.className=== 'black'){
-                target.className = 'white';
-                document.querySelectorAll(
-                    '.theme_chagne').forEach(btn => btn.value = 'black'
-                    );
+                        cls_name).forEach(target => target.value = color
+                        );
+            },
+            set_class:function(target, new_class){
+                target.className = new_class;
+            },
+            change_theme: function(){
+                var target = document.querySelector('body');
+                if(target.className === 'white'){
+                    Theme.set_class(target, 'black');
+                    Theme.set_all_value('.theme_chagne','white')
+                } else if(target.className === 'black'){
+                    Theme.set_class(target, 'white');
+                    Theme.set_all_value('.theme_chagne','black')
+                }
             }
+
         }
     </script>
 </head>
@@ -24,7 +31,7 @@
 <body class="white">
     <h1><a href="index.html">WEB</a></h1>
     <div id="btn">
-        <input type="button" value="black" class="theme_chagne" onclick="fn_change_theme();">
+        <input type="button" value="black" class="theme_chagne" onclick="Theme.change_theme();">
     </div>
     <div id="grid">
         <ol>
@@ -49,7 +56,7 @@
 
     </div>
     <div id="btn2">
-        <input type="button" value="black" class="theme_chagne" onclick="fn_change_theme();">
+        <input type="button" value="black" class="theme_chagne" onclick="Theme.change_theme();">
     </div>
 </body>
 
