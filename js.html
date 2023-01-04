@@ -8,16 +8,13 @@
 <body class="white">
     <h1><a href="index.html">WEB</a></h1>
     <div id="btn">
-        <div>
-            <input type="button" value="black" onclick="
+        <input type="button" value="theme" onclick="
+        if(document.querySelector('body').className=== 'white'){
             document.querySelector('body').className = 'black';
-            ">
-        </div>
-        <div>
-            <input type="button" value="white" onclick="
+        } else if(document.querySelector('body').className=== 'black'){
             document.querySelector('body').className = 'white';
-            ">
-        </div>
+        }
+        ">
     </div>
     <div id="grid">
         <ol>
