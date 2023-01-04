@@ -2,17 +2,19 @@
 <head>
     <title>WEB - STUDY JS</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css", id="mystylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="white">
     <h1><a href="index.html">WEB</a></h1>
     <div id="btn">
-        <input type="button" value="theme" onclick="
+        <input type="button" value="black" id="theme_chagne" onclick="
         if(document.querySelector('body').className=== 'white'){
             document.querySelector('body').className = 'black';
+            document.querySelector('#theme_chagne').value = 'white';
         } else if(document.querySelector('body').className=== 'black'){
             document.querySelector('body').className = 'white';
+            document.querySelector('#theme_chagne').value = 'black';
         }
         ">
     </div>
