@@ -3,20 +3,28 @@
     <title>WEB - STUDY JS</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+        var fn_change_theme = function(){
+            var target = document.querySelector('body');
+            if(target.className=== 'white'){
+                target.className = 'black';
+                document.querySelectorAll(
+                    '.theme_chagne').forEach(btn => btn.value = 'white'
+                    );
+            } else if(target.className=== 'black'){
+                target.className = 'white';
+                document.querySelectorAll(
+                    '.theme_chagne').forEach(btn => btn.value = 'black'
+                    );
+            }
+        }
+    </script>
 </head>
 
 <body class="white">
     <h1><a href="index.html">WEB</a></h1>
     <div id="btn">
-        <input type="button" value="black" id="theme_chagne" onclick="
-        if(document.querySelector('body').className=== 'white'){
-            document.querySelector('body').className = 'black';
-            document.querySelector('#theme_chagne').value = 'white';
-        } else if(document.querySelector('body').className=== 'black'){
-            document.querySelector('body').className = 'white';
-            document.querySelector('#theme_chagne').value = 'black';
-        }
-        ">
+        <input type="button" value="black" class="theme_chagne" onclick="fn_change_theme();">
     </div>
     <div id="grid">
         <ol>
@@ -39,6 +47,9 @@
             </p>
         </div>
 
+    </div>
+    <div id="btn2">
+        <input type="button" value="black" class="theme_chagne" onclick="fn_change_theme();">
     </div>
 </body>
 
