@@ -3,29 +3,7 @@
     <title>WEB - STUDY JS</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script>
-        var Theme = {
-            set_all_value:function(cls_name,color){
-                document.querySelectorAll(
-                        cls_name).forEach(target => target.value = color
-                        );
-            },
-            set_class:function(target, new_class){
-                target.className = new_class;
-            },
-            change_theme: function(){
-                var target = document.querySelector('body');
-                if(target.className === 'white'){
-                    Theme.set_class(target, 'black');
-                    Theme.set_all_value('.theme_chagne','white')
-                } else if(target.className === 'black'){
-                    Theme.set_class(target, 'white');
-                    Theme.set_all_value('.theme_chagne','black')
-                }
-            }
-
-        }
-    </script>
+    <script src="colors.js"></script>
 </head>
 
 <body class="white">
@@ -53,7 +31,6 @@
                 JavaScript는 프로토타입 기반, 다중 패러다임, 단일 스레드, 동적 언어로, 객체지향형, 명령형, 선언형(함수형 프로그래밍 등) 스타일을 지원합니다. 
             </p>
         </div>
-
     </div>
     <div id="btn2">
         <input type="button" value="black" class="theme_chagne" onclick="Theme.change_theme();">
