@@ -3,6 +3,7 @@ var Theme = {
         document.querySelectorAll(
                 cls_name).forEach(target => target.value = color
                 );
+        // $(cls_name).css(value = color)
     },
     set_class:function(target, new_class){
         target.className = new_class;

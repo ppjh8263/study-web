@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function job1(){ 
+            return new Promise((resolve, reject)=>{
+                // setTimeout(()=>{resolve('job1 ok!');}, 2000);
+                setTimeout(()=>{reject('job1 fail!');}, 200);
+            });
+        }
+        function job2(){ 
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{resolve('job2 ok!');}, 200);
+            });
+        }
+        job1()
+            .then(
+                (data) => {
+                    console.log('data', data);
+                    return job2()
+                }
+            )
+            .catch(
+                (reasoon) => {
+                    console.log('reasoon', reasoon)
+                }
+            )
+            .then(
+                (data) => {
+                    console.log('data2', data);
+                }
+            )
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

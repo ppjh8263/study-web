@@ -1,0 +1,55 @@
+<script>
+    function timer(time){
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve(time);
+            }, time);
+        });
+    }
+    // timer(1000).then((time)=>{
+    //     console.log('time:'+time);
+    //     return timer(time+1000);
+    // }).then((time)=>{
+    //     console.log('time:'+time);
+    //     return timer(time+1000);
+    // }).then((time)=>{
+    //     console.log('time:'+time);
+    //     console.log('end')
+    // })
+    // console.log('end')
+
+    
+    async function async_timer(duration, times){
+        console.time('async_timer')
+        console.log('start')
+        for (let index = 0; index < times; index++) {
+            duration = await timer(duration)
+            console.log('time:' + duration*(index+1));
+            // initial_time += duration   
+        }
+        // return duration*(index+1)
+        console.log('end')
+        console.timeEnd('async_timer')
+    }
+    console.log('parent start')
+    // async_timer(1000, 4) 
+    // console.time('Promise.all')
+    // Promise.all([timer(1000),timer(2000),timer(3000)]).then(result=>{
+    //     console.log('result : ' + result)
+    //     console.timeEnd('Promise.all')
+    // })
+    console.time('Promise.race')
+    Promise.race([timer(1000),timer(2000),timer(3000)]).then(result=>{
+        console.log('result : ' + result)
+        console.timeEnd('Promise.race')
+    })
+    console.log('parent end')
+    // async function async_timer(time){
+    //     await timer(time)
+    //     console.log('time:'+time);
+    //     return timer(time+1000)
+    // }
+    // async_timer(1000).then(time).then(time)
+    // console.log('end')
+    
+</script>
